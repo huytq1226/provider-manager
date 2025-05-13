@@ -44,37 +44,37 @@
                 <li class="nav-item">
                     <a href="/" class="nav-link">
                         <i class="fas fa-home"></i>
-                        <span>Dashboard</span>
+                        <span>Trang chủ</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/providers.php" class="nav-link">
                         <i class="fas fa-building"></i>
-                        <span>Providers</span>
+                        <span>Danh sách nhà cung cấp</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/services.php" class="nav-link">
                         <i class="fas fa-cogs"></i>
-                        <span>Services</span>
+                        <span>Dịch vụ</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/contracts.php" class="nav-link">
                         <i class="fas fa-file-contract"></i>
-                        <span>Contracts</span>
+                        <span>Hợp đồng</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/bills.php" class="nav-link">
                         <i class="fas fa-file-invoice-dollar"></i>
-                        <span>Bills</span>
+                        <span>Hóa đơn</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="/compare.php" class="nav-link">
                         <i class="fas fa-chart-line"></i>
-                        <span>Compare</span>
+                        <span>So sánh</span>
                     </a>
                 </li>
             </ul>
@@ -82,18 +82,18 @@
                 <li class="nav-item">
                     <a href="/statistics.php" class="nav-link">
                         <i class="fas fa-chart-line"></i>
-                        <span>Statistics</span>
+                        <span>Thống kê</span>
                     </a>
                 </li>
             </ul>   
             <div class="sidebar-footer">
                 <a href="/settings.php" class="nav-link">
                     <i class="fas fa-cog"></i>
-                    <span>Settings</span>
+                    <span>Cài đặt</span>
                 </a>
                 <a href="/login.php" class="nav-link">
                     <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
+                    <span>Đăng xuất</span>
                 </a>
             </div>
         </nav>

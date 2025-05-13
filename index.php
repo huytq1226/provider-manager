@@ -1,112 +1,90 @@
 <?php include 'includes/header.php'; ?>
-
-<!-- Dashboard Content -->
-<div class="row">
-    <div class="col-md-12">
-        <div class="card shadow-hover">
-            <div class="card-body">
-                <h1 class="card-title text-gradient">Welcome to Provider Management System</h1>
-                <p class="card-text lead">This system helps you manage providers, services, contracts, and bills efficiently.</p>
-                
-                <div class="row mt-4">
-                    <div class="col-md-4">
-                        <div class="card mb-3 shadow-hover">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-building me-2"></i>
-                                    Providers
-                                </h5>
-                                <p class="card-text">Manage your service providers, their details, and status.</p>
-                                <a href="providers.php" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right me-2"></i>
-                                    Go to Providers
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-3 shadow-hover">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-cogs me-2"></i>
-                                    Services
-                                </h5>
-                                <p class="card-text">View and manage available services and their details.</p>
-                                <a href="services.php" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right me-2"></i>
-                                    Go to Services
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-3 shadow-hover">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-file-invoice-dollar me-2"></i>
-                                    Bills
-                                </h5>
-                                <p class="card-text">Create and manage bills for services provided.</p>
-                                <a href="bills.php" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right me-2"></i>
-                                    Go to Bills
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Features -->
-                <div class="row mt-4">
-                    <div class="col-md-4">
-                        <div class="card mb-3 shadow-hover">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-file-contract me-2"></i>
-                                    Contracts
-                                </h5>
-                                <p class="card-text">Manage service contracts and agreements.</p>
-                                <a href="contracts.php" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right me-2"></i>
-                                    View Contracts
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-3 shadow-hover">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-chart-bar me-2"></i>
-                                    Statistics
-                                </h5>
-                                <p class="card-text">View detailed statistics and analytics.</p>
-                                <a href="statistics.php" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right me-2"></i>
-                                    View Statistics
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card mb-3 shadow-hover">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-trophy me-2"></i>
-                                    Rankings
-                                </h5>
-                                <p class="card-text">Check provider rankings and performance.</p>
-                                <a href="ranking.php" class="btn btn-primary">
-                                    <i class="fas fa-arrow-right me-2"></i>
-                                    View Rankings
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="hero-section text-center py-5 mb-4 fade-in" style="background: linear-gradient(90deg, #e3f2fd 60%, #fff 100%); border-radius: 1rem;">
+    <h1 class="display-4 text-gradient mb-3">Provider Management System</h1>
+    <p class="lead mb-4">Nền tảng quản lý nhà cung cấp, dịch vụ, hợp đồng, hóa đơn và nhiều hơn nữa – hiện đại, trực quan, bảo mật.</p>
+    <a href="providers.php" class="btn btn-primary btn-lg shadow-hover me-2">Khám phá ngay</a>
+    <a href="statistics.php" class="btn btn-outline-primary btn-lg shadow-hover">Xem thống kê</a>
+</div>
+<div class="row g-4">
+    <div class="col-md-3">
+        <div class="card shadow-hover h-100 fade-in">
+            <div class="card-body text-center">
+                <i class="fas fa-building fa-2x text-gradient mb-3"></i>
+                <h5 class="card-title">Quản lý nhà cung cấp</h5>
+                <p class="card-text">Thêm, sửa, xóa, tìm kiếm và xếp hạng các nhà cung cấp theo uy tín, ngành nghề, mã số thuế.</p>
+                <a href="providers.php" class="btn btn-primary btn-sm mt-2">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-hover h-100 fade-in">
+            <div class="card-body text-center">
+                <i class="fas fa-cogs fa-2x text-gradient mb-3"></i>
+                <h5 class="card-title">Dịch vụ</h5>
+                <p class="card-text">Quản lý các dịch vụ cung cấp, liên kết với nhà cung cấp, theo dõi trạng thái hoạt động.</p>
+                <a href="services.php" class="btn btn-primary btn-sm mt-2">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-hover h-100 fade-in">
+            <div class="card-body text-center">
+                <i class="fas fa-file-contract fa-2x text-gradient mb-3"></i>
+                <h5 class="card-title">Hợp đồng</h5>
+                <p class="card-text">Quản lý hợp đồng, theo dõi trạng thái, thời hạn, đối tác và dịch vụ liên quan.</p>
+                <a href="contracts.php" class="btn btn-primary btn-sm mt-2">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-hover h-100 fade-in">
+            <div class="card-body text-center">
+                <i class="fas fa-file-invoice-dollar fa-2x text-gradient mb-3"></i>
+                <h5 class="card-title">Hóa đơn</h5>
+                <p class="card-text">Tạo, quản lý hóa đơn, tìm kiếm, lọc theo trạng thái, hợp đồng liên quan.</p>
+                <a href="bills.php" class="btn btn-primary btn-sm mt-2">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-hover h-100 fade-in">
+            <div class="card-body text-center">
+                <i class="fas fa-chart-bar fa-2x text-gradient mb-3"></i>
+                <h5 class="card-title">Thống kê</h5>
+                <p class="card-text">Xem báo cáo, biểu đồ, thống kê hóa đơn, hợp đồng, nhà cung cấp theo thời gian.</p>
+                <a href="statistics.php" class="btn btn-primary btn-sm mt-2">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-hover h-100 fade-in">
+            <div class="card-body text-center">
+                <i class="fas fa-balance-scale fa-2x text-gradient mb-3"></i>
+                <h5 class="card-title">So sánh</h5>
+                <p class="card-text">So sánh các nhà cung cấp theo giá, uy tín, dịch vụ cung cấp, hỗ trợ ra quyết định.</p>
+                <a href="compare.php" class="btn btn-primary btn-sm mt-2">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-hover h-100 fade-in">
+            <div class="card-body text-center">
+                <i class="fas fa-trophy fa-2x text-gradient mb-3"></i>
+                <h5 class="card-title">Xếp hạng</h5>
+                <p class="card-text">Xem bảng xếp hạng nhà cung cấp theo uy tín, số lượng hợp đồng, hóa đơn.</p>
+                <a href="ranking.php" class="btn btn-primary btn-sm mt-2">Xem chi tiết</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-hover h-100 fade-in">
+            <div class="card-body text-center">
+                <i class="fas fa-envelope fa-2x text-gradient mb-3"></i>
+                <h5 class="card-title">Gửi email</h5>
+                <p class="card-text">Gửi thông báo, trao đổi với nhà cung cấp nhanh chóng, lưu lịch sử gửi nhận.</p>
+                <a href="email.php" class="btn btn-primary btn-sm mt-2">Xem chi tiết</a>
             </div>
         </div>
     </div>
 </div>
-
 <?php include 'includes/footer.php'; ?>

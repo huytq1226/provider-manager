@@ -1,63 +1,76 @@
 <?php
 require_once 'config/database.php';
 require_once 'includes/functions.php';
+require_once 'includes/auth.php';
 
-// Handle form submissions
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['action'])) {
-        switch ($_POST['action']) {
-            case 'add':
-                $stmt = $conn->prepare("INSERT INTO Providers (name, taxCode, vat, status, address, email, phone, website, reputation) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                $stmt->execute([
-                    sanitize($_POST['name']),
-                    sanitize($_POST['taxCode']),
-                    sanitize($_POST['vat']),
-                    sanitize($_POST['status']),
-                    sanitize($_POST['address']),
-                    sanitize($_POST['email']),
-                    sanitize($_POST['phone']),
-                    sanitize($_POST['website']),
-                    (int)$_POST['reputation']
-                ]);
-                break;
-
-            case 'edit':
-                $stmt = $conn->prepare("UPDATE Providers SET name = ?, taxCode = ?, vat = ?, status = ?, address = ?, email = ?, phone = ?, website = ?, reputation = ? WHERE id = ?");
-                $stmt->execute([
-                    sanitize($_POST['name']),
-                    sanitize($_POST['taxCode']),
-                    sanitize($_POST['vat']),
-                    sanitize($_POST['status']),
-                    sanitize($_POST['address']),
-                    sanitize($_POST['email']),
-                    sanitize($_POST['phone']),
-                    sanitize($_POST['website']),
-                    (int)$_POST['reputation'],
-                    (int)$_POST['id']
-                ]);
-                break;
-
-            case 'delete':
-                $stmt = $conn->prepare("DELETE FROM Providers WHERE id = ?");
-                $stmt->execute([(int)$_POST['id']]);
-                break;
-        }
-        redirect('providers.php');
-    }
+// Xử lý tìm kiếm
+$search = trim($_GET['search'] ?? '');
+$searchSql = '';
+$params = [];
+if ($search !== '') {
+    $searchSql = "WHERE name LIKE ? OR taxCode LIKE ?";
+    $params = ["%$search%", "%$search%"];
 }
 
-// Get all providers
-$stmt = $conn->query("SELECT * FROM Providers ORDER BY id DESC");
-$providers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Lấy top 10 nhà cung cấp theo reputation
+$sql = "SELECT * FROM Providers $searchSql ORDER BY reputation DESC, id ASC LIMIT 10";
+$stmt = $conn->prepare($sql);
+$stmt->execute($params);
+$topProviders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Lấy tất cả providers cho admin quản trị
+$stmtAll = $conn->query("SELECT * FROM Providers ORDER BY id DESC");
+$providers = $stmtAll->fetchAll(PDO::FETCH_ASSOC);
 
 include 'includes/header.php';
 ?>
-
-<!-- Main Content -->
 <div class="container-fluid">
     <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-hover fade-in mb-4">
+                <div class="card-header bg-danger text-white text-center">
+                    <h4 class="mb-0">BẢNG XẾP HẠNG NHÀ CUNG CẤP UY TÍN NHẤT</h4>
+                </div>
+                <div class="card-body p-0">
+                    <form class="p-3 border-bottom bg-light" method="get" action="">
+                        <div class="row g-2 align-items-center">
+                            <div class="col">
+                                <input type="text" class="form-control" name="search" placeholder="Tìm theo tên hoặc mã số thuế..." value="<?php echo htmlspecialchars($search); ?>">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i> Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="ranking-list">
+                        <?php foreach ($topProviders as $i => $p): ?>
+                        <div class="d-flex align-items-center px-3 py-3 <?php echo $i % 2 ? 'bg-light' : ''; ?>" style="border-bottom:1px solid #eee;">
+                            <div class="fw-bold fs-4 me-3 text-danger" style="width:32px;"> <?php echo $i+1; ?> </div>
+                            <div class="flex-grow-1">
+                                <div class="fw-bold text-gradient fs-5"><?php echo htmlspecialchars($p['name']); ?></div>
+                                <div class="text-muted small">
+                                    <span class="me-3"><i class="fas fa-id-card"></i> <b>MST:</b> <?php echo htmlspecialchars($p['taxCode']); ?></span>
+                                    <span><i class="fas fa-industry"></i> <b>Ngành nghề:</b> <?php echo htmlspecialchars($p['des'] ?? $p['status']); ?></span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="badge bg-warning text-dark fs-6"><i class="fas fa-star"></i> <?php echo $p['reputation']; ?>/5</span>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                        <?php if (empty($topProviders)): ?>
+                        <div class="text-center py-4 text-muted">Không tìm thấy nhà cung cấp phù hợp.</div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php if (isAdmin()): ?>
+    <div class="row">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card mt-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h2 class="mb-0">Manage Providers</h2>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProviderModal">
@@ -106,6 +119,8 @@ include 'includes/header.php';
             </div>
         </div>
     </div>
+    <!-- Modal và JS quản trị giữ nguyên như cũ -->
+    <?php endif; ?>
 </div>
 
 <!-- Add Provider Modal -->
