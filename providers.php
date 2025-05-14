@@ -13,7 +13,13 @@ if ($search !== '') {
 }
 
 // Lấy top 10 nhà cung cấp theo reputation
-$sql = "SELECT * FROM Providers $searchSql ORDER BY reputation DESC, id ASC LIMIT 10";
+$sql = "SELECT p.*, s.des as service_des 
+        FROM Providers p 
+        LEFT JOIN ProvideService ps ON p.id = ps.providerId 
+        LEFT JOIN Services s ON ps.serviceId = s.id 
+        $searchSql 
+        ORDER BY p.reputation DESC, p.id ASC 
+        LIMIT 10";
 $stmt = $conn->prepare($sql);
 $stmt->execute($params);
 $topProviders = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -44,22 +50,22 @@ include 'includes/header.php';
                     </form>
                     <div class="ranking-list">
                         <?php foreach ($topProviders as $i => $p): ?>
-                        <div class="d-flex align-items-center px-3 py-3 <?php echo $i % 2 ? 'bg-light' : ''; ?>" style="border-bottom:1px solid #eee;">
-                            <div class="fw-bold fs-4 me-3 text-danger" style="width:32px;"> <?php echo $i+1; ?> </div>
-                            <div class="flex-grow-1">
-                                <div class="fw-bold text-gradient fs-5"><?php echo htmlspecialchars($p['name']); ?></div>
-                                <div class="text-muted small">
-                                    <span class="me-3"><i class="fas fa-id-card"></i> <b>MST:</b> <?php echo htmlspecialchars($p['taxCode']); ?></span>
-                                    <span><i class="fas fa-industry"></i> <b>Ngành nghề:</b> <?php echo htmlspecialchars($p['des'] ?? $p['status']); ?></span>
+                            <div class="d-flex align-items-center px-3 py-3 <?php echo $i % 2 ? 'bg-light' : ''; ?>" style="border-bottom:1px solid #eee;">
+                                <div class="fw-bold fs-4 me-3 text-danger" style="width:32px;"> <?php echo $i + 1; ?> </div>
+                                <div class="flex-grow-1">
+                                    <div class="fw-bold text-gradient fs-5"><?php echo htmlspecialchars($p['name']); ?></div>
+                                    <div class="text-muted small">
+                                        <span class="me-3"><i class="fas fa-id-card"></i> <b>MST:</b> <?php echo htmlspecialchars($p['taxCode']); ?></span>
+                                        <span><i class="fas fa-industry"></i> <b>Ngành nghề:</b> <?php echo htmlspecialchars($p['service_des'] ?? 'Chưa cập nhật'); ?></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="badge bg-warning text-dark fs-6"><i class="fas fa-star"></i> <?php echo $p['reputation']; ?>/100</span>
                                 </div>
                             </div>
-                            <div>
-                                <span class="badge bg-warning text-dark fs-6"><i class="fas fa-star"></i> <?php echo $p['reputation']; ?>/5</span>
-                            </div>
-                        </div>
                         <?php endforeach; ?>
                         <?php if (empty($topProviders)): ?>
-                        <div class="text-center py-4 text-muted">Không tìm thấy nhà cung cấp phù hợp.</div>
+                            <div class="text-center py-4 text-muted">Không tìm thấy nhà cung cấp phù hợp.</div>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -68,58 +74,58 @@ include 'includes/header.php';
     </div>
 
     <?php if (isAdmin()): ?>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card mt-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h2 class="mb-0">Manage Providers</h2>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProviderModal">
-                        Add New Provider
-                    </button>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Tax Code</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Reputation</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($providers as $provider): ?>
-                                <tr>
-                                    <td><?php echo htmlspecialchars($provider['id']); ?></td>
-                                    <td><?php echo htmlspecialchars($provider['name']); ?></td>
-                                    <td><?php echo htmlspecialchars($provider['taxCode']); ?></td>
-                                    <td><?php echo htmlspecialchars($provider['email']); ?></td>
-                                    <td><?php echo htmlspecialchars($provider['phone']); ?></td>
-                                    <td><?php echo htmlspecialchars($provider['reputation']); ?></td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary" 
-                                                onclick="editProvider(<?php echo htmlspecialchars(json_encode($provider)); ?>)">
-                                            Edit
-                                        </button>
-                                        <button type="button" class="btn btn-sm btn-danger" 
-                                                onclick="deleteProvider(<?php echo $provider['id']; ?>)">
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mt-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="mb-0">Manage Providers</h2>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProviderModal">
+                            Add New Provider
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Tax Code</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Reputation</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($providers as $provider): ?>
+                                        <tr>
+                                            <td><?php echo htmlspecialchars($provider['id']); ?></td>
+                                            <td><?php echo htmlspecialchars($provider['name']); ?></td>
+                                            <td><?php echo htmlspecialchars($provider['taxCode']); ?></td>
+                                            <td><?php echo htmlspecialchars($provider['email']); ?></td>
+                                            <td><?php echo htmlspecialchars($provider['phone']); ?></td>
+                                            <td><?php echo htmlspecialchars($provider['reputation']); ?></td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-primary"
+                                                    onclick="editProvider(<?php echo htmlspecialchars(json_encode($provider)); ?>)">
+                                                    Edit
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-danger"
+                                                    onclick="deleteProvider(<?php echo $provider['id']; ?>)">
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Modal và JS quản trị giữ nguyên như cũ -->
+        <!-- Modal và JS quản trị giữ nguyên như cũ -->
     <?php endif; ?>
 </div>
 
@@ -262,7 +268,7 @@ include 'includes/header.php';
         document.getElementById('edit_phone').value = provider.phone;
         document.getElementById('edit_website').value = provider.website;
         document.getElementById('edit_reputation').value = provider.reputation;
-        
+
         new bootstrap.Modal(document.getElementById('editProviderModal')).show();
     }
 
@@ -274,4 +280,4 @@ include 'includes/header.php';
     }
 </script>
 
-<?php include 'includes/footer.php'; ?> 
+<?php include 'includes/footer.php'; ?>
