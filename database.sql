@@ -3,6 +3,7 @@ CREATE DATABASE IF NOT EXISTS provider_management;
 USE provider_management;
 
 -- Create tables
+-- Create tables
 CREATE TABLE IF NOT EXISTS Providers (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -58,6 +59,9 @@ CREATE TABLE IF NOT EXISTS Contracts (
     FOREIGN KEY (providerId) REFERENCES Providers(id)
 );
 
+
+-- Updated Bills table to ensure it matches our code
+DROP TABLE IF EXISTS Bills;
 CREATE TABLE IF NOT EXISTS Bills (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -67,7 +71,8 @@ CREATE TABLE IF NOT EXISTS Bills (
     createdDate DATETIME DEFAULT CURRENT_TIMESTAMP,
     paidDate DATE,
     vat FLOAT,
-    refContractId VARCHAR(255)
+    refContractId INT,
+    FOREIGN KEY (refContractId) REFERENCES Contracts(id)
 );
 
 -- Insert sample data
@@ -99,9 +104,10 @@ INSERT INTO Contracts (name, status, price, currency, unit, signedDate, expiredD
 ('Security Services', 'Active', 3000.00, 'USD', 'project', '2024-04-01', '2025-03-31', 'Tom Harris', '0123456782', 'Mary Miller', '0987654323', 4, 4),
 ('Analytics Project', 'Active', 4000.00, 'USD', 'project', '2024-05-01', '2025-04-30', 'Chris Lee', '0123456783', 'Pat Taylor', '0987654324', 5, 5);
 
+-- Updated Bills sample data to match the refContractId as integer
 INSERT INTO Bills (name, des, status, quantity, paidDate, vat, refContractId) VALUES
-('Web Dev Invoice', 'Payment for website development', 'Paid', 1, '2024-01-15', 10.0, 'CONTRACT001'),
-('Cloud Services Bill', 'Monthly cloud services', 'Paid', 1, '2024-02-15', 10.0, 'CONTRACT002'),
-('IT Support Invoice', 'Monthly IT support', 'Pending', 1, NULL, 10.0, 'CONTRACT003'),
-('Security Services Bill', 'Security project payment', 'Paid', 1, '2024-04-15', 10.0, 'CONTRACT004'),
-('Analytics Invoice', 'Data analytics project', 'Pending', 1, NULL, 10.0, 'CONTRACT005'); 
+('Web Dev Invoice', 'Payment for website development', 'Paid', 1, '2024-01-15', 10.0, 1),
+('Cloud Services Bill', 'Monthly cloud services', 'Paid', 1, '2024-02-15', 10.0, 2),
+('IT Support Invoice', 'Monthly IT support', 'Pending', 1, NULL, 10.0, 3),
+('Security Services Bill', 'Security project payment', 'Paid', 1, '2024-04-15', 10.0, 4),
+('Analytics Invoice', 'Data analytics project', 'Pending', 1, NULL, 10.0, 5); 

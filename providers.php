@@ -8,18 +8,36 @@ $search = trim($_GET['search'] ?? '');
 $searchSql = '';
 $params = [];
 if ($search !== '') {
-    $searchSql = "WHERE name LIKE ? OR taxCode LIKE ?";
+    $searchSql = "WHERE p.name LIKE ? OR p.taxCode LIKE ?";
     $params = ["%$search%", "%$search%"];
 }
 
-// Lấy top 10 nhà cung cấp theo reputation
-$sql = "SELECT p.*, s.des as service_des 
+// Pagination settings
+$perPage = 10;
+$page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
+$offset = ($page - 1) * $perPage;
+
+// Count total records for pagination
+$countSql = "SELECT COUNT(DISTINCT p.id) as total FROM Providers p 
+             LEFT JOIN ProvideService ps ON p.id = ps.providerId 
+             LEFT JOIN Services s ON ps.serviceId = s.id 
+             $searchSql";
+$countStmt = $conn->prepare($countSql);
+$countStmt->execute($params);
+$totalRecords = $countStmt->fetch(PDO::FETCH_ASSOC)['total'];
+$totalPages = ceil($totalRecords / $perPage);
+
+// Lấy providers với phân trang
+$sql = "SELECT p.*, 
+               GROUP_CONCAT(s.des SEPARATOR ', ') AS service_des 
         FROM Providers p 
         LEFT JOIN ProvideService ps ON p.id = ps.providerId 
         LEFT JOIN Services s ON ps.serviceId = s.id 
-        $searchSql 
+        $searchSql
+        GROUP BY p.id 
         ORDER BY p.reputation DESC, p.id ASC 
-        LIMIT 10";
+        LIMIT $offset, $perPage";
+
 $stmt = $conn->prepare($sql);
 $stmt->execute($params);
 $topProviders = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -51,12 +69,12 @@ include 'includes/header.php';
                     <div class="ranking-list">
                         <?php foreach ($topProviders as $i => $p): ?>
                             <div class="d-flex align-items-center px-3 py-3 <?php echo $i % 2 ? 'bg-light' : ''; ?>" style="border-bottom:1px solid #eee;">
-                                <div class="fw-bold fs-4 me-3 text-danger" style="width:32px;"> <?php echo $i + 1; ?> </div>
+                                <div class="fw-bold fs-4 me-3 text-danger" style="width:32px;"> <?php echo $offset + $i + 1; ?> </div>
                                 <div class="flex-grow-1">
                                     <div class="fw-bold text-gradient fs-5"><?php echo htmlspecialchars($p['name']); ?></div>
                                     <div class="text-muted small">
                                         <span class="me-3"><i class="fas fa-id-card"></i> <b>MST:</b> <?php echo htmlspecialchars($p['taxCode']); ?></span>
-                                        <span><i class="fas fa-industry"></i> <b>Ngành nghề:</b> <?php echo htmlspecialchars($p['service_des'] ?? 'Chưa cập nhật'); ?></span>
+                                        <span><i class="fas fa-industry"></i> <b>Dịch vụ:</b> <?php echo htmlspecialchars($p['service_des'] ?? 'Chưa cập nhật'); ?></span>
                                     </div>
                                 </div>
                                 <div>
@@ -68,6 +86,37 @@ include 'includes/header.php';
                             <div class="text-center py-4 text-muted">Không tìm thấy nhà cung cấp phù hợp.</div>
                         <?php endif; ?>
                     </div>
+                    
+                    <!-- Pagination -->
+                    <?php if ($totalPages > 1): ?>
+                    <div class="pagination-container py-3 d-flex justify-content-center">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <?php if ($page > 1): ?>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=<?php echo $page - 1; ?><?php echo $search ? '&search='.urlencode($search) : ''; ?>" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                                
+                                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                                <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
+                                    <a class="page-link" href="?page=<?php echo $i; ?><?php echo $search ? '&search='.urlencode($search) : ''; ?>"><?php echo $i; ?></a>
+                                </li>
+                                <?php endfor; ?>
+                                
+                                <?php if ($page < $totalPages): ?>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=<?php echo $page + 1; ?><?php echo $search ? '&search='.urlencode($search) : ''; ?>" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                                <?php endif; ?>
+                            </ul>
+                        </nav>
+                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

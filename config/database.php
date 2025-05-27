@@ -1,11 +1,12 @@
 <?php
-define('DB_HOST', 'localhost:8080');
+define('DB_HOST', 'localhost');
+define('DB_PORT', '3307');  // Use the correct port
 define('DB_USER', 'root');  // Mặc định của XAMPP/Laragon
 define('DB_PASS', '');      // Mặc định của XAMPP/Laragon
 define('DB_NAME', 'provider_management');
 
 try {
-    $conn = new PDO("mysql:host=localhost;port=3307;dbname=" . DB_NAME, DB_USER, DB_PASS);
+    $conn = new PDO("mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
 
     // Thiết lập chế độ báo lỗi
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

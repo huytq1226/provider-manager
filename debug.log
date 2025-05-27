@@ -1,0 +1,603 @@
+[2025-05-27 15:32:49] POST Data: Array
+(
+    [action] => add
+    [ajax] => 1
+    [refContractId] => 3
+    [name] => hoá đơn phát triển game
+    [des] => Thanh toán phát triển game
+    [quantity] => 200
+    [vat] => 10.0
+    [status] => Paid
+)
+
+
+[2025-05-27 15:32:49] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 862
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundary2gsrd9w12ojA6Bq9
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56183
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748359969.5695
+    [REQUEST_TIME] => 1748359969
+)
+
+
+[2025-05-27 15:32:54] POST Data: Array
+(
+    [ajax] => 1
+    [search] => hoá
+    [status] => 
+    [action] => search
+)
+
+
+[2025-05-27 15:32:54] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 517
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundarykhGH1wVBBNsXk2dc
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56183
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748359974.6264
+    [REQUEST_TIME] => 1748359974
+)
+
+
+[2025-05-27 15:33:02] POST Data: Array
+(
+    [ajax] => 1
+    [search] => cà phê
+    [status] => 
+    [action] => search
+)
+
+
+[2025-05-27 15:33:02] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 521
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundaryZXNHGUVowCyioXYt
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=ho%C3%A1&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56197
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748359982.7547
+    [REQUEST_TIME] => 1748359982
+)
+
+
+[2025-05-27 15:33:09] POST Data: Array
+(
+    [ajax] => 1
+    [search] => 
+    [status] => 
+    [action] => search
+)
+
+
+[2025-05-27 15:33:09] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 513
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundary2XHkSBlGAVpx5vkk
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=c%C3%A0+ph%C3%AA&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56199
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748359989.7314
+    [REQUEST_TIME] => 1748359989
+)
+
+
+[2025-05-27 15:33:33] POST Data: Array
+(
+    [action] => add
+    [ajax] => 1
+    [refContractId] => 22
+    [name] => hoá đơn phát triển game
+    [des] => đasad
+    [quantity] => 1000
+    [vat] => 10
+    [status] => Pending
+)
+
+
+[2025-05-27 15:33:33] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 841
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundary1B81s4yatXa96dd9
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56201
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748360013.2425
+    [REQUEST_TIME] => 1748360013
+)
+
+
+[2025-05-27 15:37:49] POST Data: Array
+(
+    [action] => add
+    [ajax] => 1
+    [refContractId] => 22
+    [name] => hoá đơn phát triển game
+    [des] => đasad
+    [quantity] => 1000
+    [vat] => 10
+    [status] => Pending
+)
+
+
+[2025-05-27 15:37:49] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 841
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundarywFq6E3lDBZmqnBmC
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56732
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748360269.8897
+    [REQUEST_TIME] => 1748360269
+)
+
+
+[2025-05-27 15:38:02] POST Data: Array
+(
+    [action] => add
+    [ajax] => 1
+    [refContractId] => 22
+    [name] => Lô quần áo số 10
+    [des] => đâsdsad
+    [quantity] => 100
+    [vat] => 10
+    [status] => Paid
+)
+
+
+[2025-05-27 15:38:02] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 833
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundaryAdhgX4d6vZnLATls
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56780
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748360282.0522
+    [REQUEST_TIME] => 1748360282
+)
+
+
+[2025-05-27 15:38:03] POST Data: Array
+(
+    [ajax] => 1
+    [search] => 
+    [status] => 
+    [action] => search
+)
+
+
+[2025-05-27 15:38:03] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 513
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundaryIEDokPXC6BOJ570c
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56780
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748360283.7154
+    [REQUEST_TIME] => 1748360283
+)
+
+
+[2025-05-27 15:38:06] POST Data: Array
+(
+    [ajax] => 1
+    [search] => 
+    [status] => 
+    [action] => search
+)
+
+
+[2025-05-27 15:38:06] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 513
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundaryD3yE8SIVXLVUDuW2
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56780
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748360286.7618
+    [REQUEST_TIME] => 1748360286
+)
+
+
+[2025-05-27 15:39:17] POST Data: Array
+(
+    [action] => add
+    [ajax] => 1
+    [refContractId] => 16
+    [name] => Hoá đơn cung cấp mẫu vinfast3
+    [des] => Cung cấp 10000 chiếc VF3 có thời hạn blalala
+    [quantity] => 10000
+    [vat] => 10
+    [status] => Pending
+)
+
+
+[2025-05-27 15:39:17] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 896
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundarypuemi6pwi1F2wIKC
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56897
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748360357.9537
+    [REQUEST_TIME] => 1748360357
+)
+
+
+[2025-05-27 15:39:19] POST Data: Array
+(
+    [ajax] => 1
+    [search] => 
+    [status] => 
+    [action] => search
+)
+
+
+[2025-05-27 15:39:19] SERVER Data: Array
+(
+    [HTTP_HOST] => provider-manager.test:8080
+    [HTTP_CONNECTION] => keep-alive
+    [CONTENT_LENGTH] => 513
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+    [CONTENT_TYPE] => multipart/form-data; boundary=----WebKitFormBoundaryt3kkUa5nE6Ud1rQ2
+    [HTTP_ACCEPT] => */*
+    [HTTP_SEC_GPC] => 1
+    [HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.9
+    [HTTP_ORIGIN] => http://provider-manager.test:8080
+    [HTTP_REFERER] => http://provider-manager.test:8080/bills.php?search=&status=
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate
+    [HTTP_COOKIE] => PHPSESSID=qk7ogubi46eei85aail73das97
+    [PATH] => c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;D:\Program Files\bin\;c:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk-22;C:\Program Files\Git\cmd;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\aloha\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python312\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\a;C:\Program Files\Docker\Docker\resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Tesseract-OCR;C:\Program Files\Tesser;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\aloha\AppData\Local\Programs\Python\Python311\;C:\Users\aloha\AppData\Local\Programs\Python\Launcher\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\aloha\.pyenv\pyenv-win\shims;C:\Users\aloha\.pyenv\pyenv-win\bin;C:\Users\aloha\AppData\Local\Microsoft\WindowsApps;C:\Users\aloha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\aloha\AppData\Local\GitHubDesktop\bin;C:\Users\aloha\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\JetBrains\PyCharm 2024.2.1\bin;C:\Program Files\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\aloha\AppData\Local\Programs\cursor\resources\app\bin
+    [SystemRoot] => C:\WINDOWS
+    [COMSPEC] => C:\WINDOWS\system32\cmd.exe
+    [PATHEXT] => .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+    [WINDIR] => C:\WINDOWS
+    [SERVER_SIGNATURE] => 
+    [SERVER_SOFTWARE] => Apache/2.4.62 (Win64) OpenSSL/3.0.15 PHP/8.3.16
+    [SERVER_NAME] => provider-manager.test
+    [SERVER_ADDR] => 127.0.0.1
+    [SERVER_PORT] => 8080
+    [REMOTE_ADDR] => 127.0.0.1
+    [DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [REQUEST_SCHEME] => http
+    [CONTEXT_PREFIX] => 
+    [CONTEXT_DOCUMENT_ROOT] => D:/App/laragon/www/provider-manager
+    [SERVER_ADMIN] => admin@example.com
+    [SCRIPT_FILENAME] => D:/App/laragon/www/provider-manager/bills.php
+    [REMOTE_PORT] => 56897
+    [GATEWAY_INTERFACE] => CGI/1.1
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [REQUEST_METHOD] => POST
+    [QUERY_STRING] => 
+    [REQUEST_URI] => /bills.php
+    [SCRIPT_NAME] => /bills.php
+    [PHP_SELF] => /bills.php
+    [REQUEST_TIME_FLOAT] => 1748360359.0507
+    [REQUEST_TIME] => 1748360359
+)
+
+
