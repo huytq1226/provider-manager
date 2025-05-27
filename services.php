@@ -1,10 +1,14 @@
 <?php
+session_start(); // Bắt đầu session
 require_once 'config/database.php';
 require_once 'includes/functions.php';
 
+// Kiểm tra nếu session role không tồn tại, mặc định là 'user'
+$role = isset($_SESSION['role']) ? $_SESSION['role'] : 'user';
+
 // Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['action'])) {
+    if (isset($_POST['action']) && $role === 'admin') { // Chỉ admin được phép thực hiện các hành động
         switch ($_POST['action']) {
             case 'add':
                 $stmt = $conn->prepare("INSERT INTO Services (name, des, status) VALUES (?, ?, ?)");
@@ -31,6 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
         }
         redirect('services.php');
+    } else {
+        // Nếu không phải admin, chuyển hướng hoặc thông báo lỗi
+        redirect('services.php?error=unauthorized');
     }
 }
 
@@ -48,9 +55,11 @@ include 'includes/header.php';
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h2 class="mb-0">Manage Services</h2>
+                    <?php if ($role === 'admin'): ?>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addServiceModal">
                         Add New Service
                     </button>
+                    <?php endif; ?>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -61,7 +70,9 @@ include 'includes/header.php';
                                     <th>Name</th>
                                     <th>Description</th>
                                     <th>Status</th>
-                                    <th>Actions</th>
+                                    <?php if ($role === 'admin'): ?>
+                                        <th>Actions</th>
+                                    <?php endif; ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -71,6 +82,7 @@ include 'includes/header.php';
                                     <td><?php echo htmlspecialchars($service['name']); ?></td>
                                     <td><?php echo htmlspecialchars($service['des']); ?></td>
                                     <td><?php echo htmlspecialchars($service['status']); ?></td>
+                                    <?php if ($role === 'admin'): ?>
                                     <td>
                                         <button type="button" class="btn btn-sm btn-primary" 
                                                 onclick="editService(<?php echo htmlspecialchars(json_encode($service)); ?>)">
@@ -81,6 +93,7 @@ include 'includes/header.php';
                                             Delete
                                         </button>
                                     </td>
+                                    <?php endif; ?>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -92,6 +105,7 @@ include 'includes/header.php';
     </div>
 </div>
 
+<?php if ($role === 'admin'): ?>
 <!-- Add Service Modal -->
 <div class="modal fade" id="addServiceModal" tabindex="-1">
     <div class="modal-dialog">
@@ -121,7 +135,7 @@ include 'includes/header.php';
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add Service</button>
+                    <button type="submit" class="btn btn-primary">Thêm dịch vụ mới</button>
                 </div>
             </form>
         </div>
@@ -164,6 +178,7 @@ include 'includes/header.php';
         </div>
     </div>
 </div>
+<?php endif; ?>
 
 <!-- Delete Service Form -->
 <form id="deleteForm" method="POST" style="display: none;">
@@ -189,4 +204,4 @@ include 'includes/header.php';
     }
 </script>
 
-<?php include 'includes/footer.php'; ?> 
+<?php include 'includes/footer.php'; ?>
