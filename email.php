@@ -48,7 +48,7 @@ include 'includes/header.php';
         <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-header">
-                    <h2 class="card-title">Send Email to Provider</h2>
+                    <h2 class="card-title">Gửi Email đến Nhà Cung Cấp</h2>
                 </div>
                 <div class="card-body">
                     <?php if ($message): ?>
@@ -89,7 +89,7 @@ include 'includes/header.php';
             <!-- View Saved Emails -->
             <div class="card mt-4">
                 <div class="card-header">
-                    <h3 class="card-title">Saved Emails</h3>
+                    <h3 class="card-title">Emails đã lưu</h3>
                 </div>
                 <div class="card-body">
                     <?php
