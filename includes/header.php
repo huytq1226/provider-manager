@@ -77,20 +77,21 @@
                         <span>So sánh</span>
                     </a>
                 </li>
-            </ul>
-            <ul class="list-unstyled components">
                 <li class="nav-item">
                     <a href="/statistics.php" class="nav-link">
                         <i class="fas fa-chart-line"></i>
                         <span>Thống kê</span>
                     </a>
                 </li>
+            </ul>
+            <ul class="list-unstyled components">
+
             </ul>   
             <div class="sidebar-footer">
-                <a href="/settings.php" class="nav-link">
+                <!-- <a href="/settings.php" class="nav-link">
                     <i class="fas fa-cog"></i>
                     <span>Cài đặt</span>
-                </a>
+                </a> -->
                 <a href="/login.php" class="nav-link">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Đăng xuất</span>

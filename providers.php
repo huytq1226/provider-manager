@@ -49,6 +49,20 @@ $providers = $stmtAll->fetchAll(PDO::FETCH_ASSOC);
 include 'includes/header.php';
 ?>
 <div class="container-fluid">
+    <?php if (isset($_SESSION['success'])): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
+    
+    <?php if (isset($_SESSION['error'])): ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
+
     <div class="row">
         <div class="col-lg-8 mx-auto">
             <div class="card shadow-hover fade-in mb-4">
@@ -71,11 +85,13 @@ include 'includes/header.php';
                             <div class="d-flex align-items-center px-3 py-3 <?php echo $i % 2 ? 'bg-light' : ''; ?>" style="border-bottom:1px solid #eee;">
                                 <div class="fw-bold fs-4 me-3 text-danger" style="width:32px;"> <?php echo $offset + $i + 1; ?> </div>
                                 <div class="flex-grow-1">
-                                    <div class="fw-bold text-gradient fs-5"><?php echo htmlspecialchars($p['name']); ?></div>
-                                    <div class="text-muted small">
-                                        <span class="me-3"><i class="fas fa-id-card"></i> <b>MST:</b> <?php echo htmlspecialchars($p['taxCode']); ?></span>
-                                        <span><i class="fas fa-industry"></i> <b>Dịch vụ:</b> <?php echo htmlspecialchars($p['service_des'] ?? 'Chưa cập nhật'); ?></span>
-                                    </div>
+                                    <a href="provider-details.php?id=<?php echo $p['id']; ?>" class="text-decoration-none">
+                                        <div class="fw-bold text-gradient fs-5"><?php echo htmlspecialchars($p['name']); ?></div>
+                                        <div class="text-muted small">
+                                            <span class="me-3"><i class="fas fa-id-card"></i> <b>MST:</b> <?php echo htmlspecialchars($p['taxCode']); ?></span>
+                                            <span><i class="fas fa-industry"></i> <b>Dịch vụ:</b> <?php echo htmlspecialchars($p['service_des'] ?? 'Chưa cập nhật'); ?></span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div>
                                     <span class="badge bg-warning text-dark fs-6"><i class="fas fa-star"></i> <?php echo $p['reputation']; ?>/100</span>
@@ -150,7 +166,7 @@ include 'includes/header.php';
                                     <?php foreach ($providers as $provider): ?>
                                         <tr>
                                             <td><?php echo htmlspecialchars($provider['id']); ?></td>
-                                            <td><?php echo htmlspecialchars($provider['name']); ?></td>
+                                            <td><a href="provider-details.php?id=<?php echo $provider['id']; ?>" class="text-decoration-none"><?php echo htmlspecialchars($provider['name']); ?></a></td>
                                             <td><?php echo htmlspecialchars($provider['taxCode']); ?></td>
                                             <td><?php echo htmlspecialchars($provider['email']); ?></td>
                                             <td><?php echo htmlspecialchars($provider['phone']); ?></td>
