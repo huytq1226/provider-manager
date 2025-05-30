@@ -20,6 +20,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <?php
+    // Calculate notifications for the badge
+    $notificationCount = 0;
+    
+    // Only calculate if we're not already on the notifications page
+    $currentPage = basename($_SERVER['PHP_SELF']);
+    $role = $_SESSION['role'] ?? '';
+    // Make sure database connection exists before using it
+    if (isset($conn) && $currentPage !== 'notifications.php') {
+        try {
+            // Calculate date for expiring contracts (next 30 days)
+            $today = new DateTime();
+            $thirtyDaysLater = clone $today;
+            $thirtyDaysLater->modify('+30 days');
+            $todayFormatted = $today->format('Y-m-d');
+            $thirtyDaysLaterFormatted = $thirtyDaysLater->format('Y-m-d');
+            
+            // Count expiring contracts
+            $contractsStmt = $conn->prepare("
+                SELECT COUNT(*) as count
+                FROM Contracts 
+                WHERE status = 'Active' 
+                AND expiredDate BETWEEN ? AND ?
+            ");
+            $contractsStmt->execute([$todayFormatted, $thirtyDaysLaterFormatted]);
+            $expiringContractsCount = $contractsStmt->fetch(PDO::FETCH_ASSOC)['count'];
+            
+            // Count pending bills
+            $billsStmt = $conn->prepare("
+                SELECT COUNT(*) as count 
+                FROM Bills 
+                WHERE status = 'Pending'
+            ");
+            $billsStmt->execute();
+            $pendingBillsCount = $billsStmt->fetch(PDO::FETCH_ASSOC)['count'];
+            
+            $notificationCount = $expiringContractsCount + $pendingBillsCount;
+        } catch (Exception $e) {
+            // Silently handle any database errors
+            $notificationCount = 0;
+        }
+    }
+    ?>
     <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar" class="sidebar">
@@ -36,7 +79,7 @@
                 </div>
                 <div class="user-info">
                     <h6 class="mb-0">Welcome</h6>
-                    <small>Admin User</small>
+                    <small><?php echo $role; ?></small>
                 </div>
             </div>
 
@@ -45,6 +88,15 @@
                     <a href="/" class="nav-link">
                         <i class="fas fa-home"></i>
                         <span>Trang chủ</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/notifications.php" class="nav-link">
+                        <i class="fas fa-bell"></i>
+                        <span>Thông báo</span>
+                        <?php if ($notificationCount > 0): ?>
+                        <span class="badge bg-danger rounded-pill ms-2"><?php echo $notificationCount; ?></span>
+                        <?php endif; ?>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -111,13 +163,17 @@
                         <div class="dropdown">
                             <button class="btn btn-link dropdown-toggle" type="button" id="notificationsDropdown" data-bs-toggle="dropdown">
                                 <i class="fas fa-bell"></i>
-                                <span class="badge bg-danger">3</span>
+                                <?php if ($notificationCount > 0): ?>
+                                <span class="badge bg-danger"><?php echo $notificationCount; ?></span>
+                                <?php endif; ?>
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <h6 class="dropdown-header">Notifications</h6>
-                                <a class="dropdown-item" href="#">New contract signed</a>
-                                <a class="dropdown-item" href="#">Payment received</a>
-                                <a class="dropdown-item" href="#">Service update</a>
+                                <h6 class="dropdown-header">Thông báo</h6>
+                                <?php if ($notificationCount > 0): ?>
+                                <a class="dropdown-item" href="/notifications.php">Xem <?php echo $notificationCount; ?> thông báo</a>
+                                <?php else: ?>
+                                <span class="dropdown-item">Không có thông báo mới</span>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

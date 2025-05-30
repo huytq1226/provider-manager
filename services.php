@@ -1,7 +1,5 @@
 <?php
-session_start(); // Bắt đầu session
-require_once 'config/database.php';
-require_once 'includes/functions.php';
+require_once 'includes/init.php';
 
 // Kiểm tra nếu session role không tồn tại, mặc định là 'user'
 $role = isset($_SESSION['role']) ? $_SESSION['role'] : 'user';

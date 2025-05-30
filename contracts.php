@@ -1,6 +1,5 @@
 <?php
-require_once 'config/database.php';
-require_once 'includes/functions.php';
+require_once 'includes/init.php';
 
 // Get all providers and services for dropdowns
 $stmt = $conn->query("SELECT id, name FROM Providers ORDER BY name");
